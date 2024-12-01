@@ -6,6 +6,7 @@ namespace CalculatorWinformsApp
     {
         private string? OperatorToExecute { get; set; } = null;
         private bool SwitchToSecondOperand { get; set; } = false;
+        private bool CalculationComplete { get; set; } = false;
         private float? FirstOperand { get; set; } = null;
         private float? SecondOperand { get; set; } = null;
         private float? result { get; set; } = null;
@@ -21,7 +22,7 @@ namespace CalculatorWinformsApp
             // user errors
             try
             {
-                if (calculatorDisplay.Text == "Error")
+                if (calculatorDisplay.Text == "Error" || CalculationComplete == true)
                     return;
                 switch (PadType)
                 {
@@ -192,6 +193,8 @@ namespace CalculatorWinformsApp
         private void equalButton_Click(object sender, EventArgs e)
         {
             Pad("eq");
+            CalculationComplete = true;
+            doneBox.Text = "Done";
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -201,7 +204,9 @@ namespace CalculatorWinformsApp
             this.FirstOperand = null;
             this.SecondOperand = null;
             this.result = null;
+            this.CalculationComplete = false;
             calculatorDisplay.Text = "";
+            doneBox.Text = "";
         }
     }
 }

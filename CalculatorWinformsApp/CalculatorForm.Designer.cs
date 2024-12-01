@@ -47,6 +47,7 @@
             this.buttonClear = new System.Windows.Forms.Button();
             this.multiplyButton = new System.Windows.Forms.Button();
             this.divideButton = new System.Windows.Forms.Button();
+            this.doneBox = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // num1Button
@@ -246,12 +247,23 @@
             this.divideButton.UseVisualStyleBackColor = false;
             this.divideButton.Click += new System.EventHandler(this.divideButton_Click);
             // 
+            // doneBox
+            // 
+            this.doneBox.AutoSize = true;
+            this.doneBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.doneBox.Location = new System.Drawing.Point(411, 50);
+            this.doneBox.Name = "doneBox";
+            this.doneBox.Size = new System.Drawing.Size(0, 35);
+            this.doneBox.TabIndex = 19;
+            this.doneBox.UseCompatibleTextRendering = true;
+            // 
             // formCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(513, 547);
+            this.Controls.Add(this.doneBox);
             this.Controls.Add(this.divideButton);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.equalButton);
@@ -299,5 +311,6 @@
         private Button buttonClear;
         private Button multiplyButton;
         private Button divideButton;
+        private Label doneBox;
     }
 }
